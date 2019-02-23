@@ -1,0 +1,16 @@
+#container-body{
+    padding-top: 1px;
+    text-align: center;
+    padding-bottom: 80px;
+}
+#container-plan_list{
+    display: block;
+    vertical-align: middle;
+    margin: 20px auto;
+    padding: 20px 10px;
+    min-width: 350;
+    max-width:90%;
+    min-height: 50px;
+    border:1px solid RGBA(111,111,111,0.3);
+    text-align: center;
+}

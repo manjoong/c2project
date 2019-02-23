@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>오늘의 C2</title>
+    <meta name="description" content="오늘의 C2 - 인덱스 페이지입니다.">
+    <!--        <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">-->
+    <link href="{{url_for('static',filename='bootstrap/css/bootstrap.css') }}" Content-type="text/css" rel="stylesheet" />
+    <!--        <link rel="stylesheet" href="./common/common.css">-->
+            <link href="{{url_for('static',filename='common/common.css') }}" Content-type="text/css" rel="stylesheet" />
+    <!--        <link rel="stylesheet" href="./css/index.css">-->
+            <link href="{{url_for('static',filename='css/index.css') }}" Content-type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="container-main_header">
+        <div class="filterbox">
+            <div class="whitebox">
+                <!-- <img style="" src="/source/icon/logo_white.png"> -->
+                <img style="" src="{{url_for('static',filename='source/icon/logo_white.png') }}">
+                <h1>Care yourself, Share with everyone</h1>
+                <div class="whiteline"></div>
+                <h4 style="word-break: break-all; width:70%; margin: auto auto; font-family: sans-serif;">당신을 위한 완벽한 휴일 사용 설명서, 오늘의 C2</h4>
+            </div>
+        </div>
+        <video id="video-background" muted autoplay loop>
+            <!-- <source src="/source/media/C2_background_media_large.mp4" type="video/mp4"> -->
+            <source src="{{url_for('static',filename='source/media/C2_background_media_large.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <div id="container-body">
+        <div id="container-main_logo">
+            <!-- <img id="img-main_logo" src="./source/icon/logo.png" alt="오늘의 C2 메인 로고" /> -->
+            <img id="img-main_logo" src="{{url_for('static',filename='source/icon/logo.png') }}" alt="오늘의 C2 메인 로고" />
+            <p id="p-main_logo">실시간 사용자 데이터 기반의 활동 계획 제안 및 Planning</p>
+        </div>
+        <!-- 
+        <div id="container-menubox">
+            <button class="button-clear button-main_icon">
+                <h1>사용자</h1>
+                <div class="container-icon">
+                    <img class="icon_menu" src="./source/icon/icon_user.png" alt="사용자 메뉴 아이콘"></div>
+                <p>실시간 데이터를 기반으로 다양한 맞춤 활동 계획을 검색합니다.</p>
+            </button>
+            <div class="divline-vertical"></div>
+            <button class="button-clear button-main_icon">
+                <h1>플래너</h1>
+                <div id="img-icon_planner" class="container-icon">
+                    <img class="icon_menu" src="./source/icon/icon_planner.png" alt="플래너 메뉴 아이콘"></div>
+                <p>나만의 맞춤 활동 계획을 생성하고 다른 사용자들과 공유합니다.</p>
+            </button>
+        </div>-->
+
+        <!--<div id="intro_iconic_exp" class="container-intro">
+            <span>공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및 단체행동권을 가진다. 정당의 설립은 자유이며, 복수정당제는 보장된다. 국가는 농업 및 어업을 보호·육성하기 위하여 농·어촌종합개발과 그 지원등 필요한 계획을 수립·시행하여야 한다.</span>
+            <img id="icon_something2" src="/source/icon/logo.png" />
+        </div>
+
+        <div id="intro_description" class="container-intro">
+            <div style="display: inline-block;">
+                <img style="display: inline-block;" id="icon_something1" src="/source/icon/logo_C2.png" />
+            </div>
+            <div style="display: inline-block;">
+                <span>이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다.</span>
+                <button>시작하기</button>
+            </div>
+        </div>
+
+        <div id="intro_other" class="container-intro">
+            <img id="icon_something2" src="/source/icon/logo.png" />
+            <p>공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및 단체행동권을 가진다. 정당의 설립은 자유이며, 복수정당제는 보장된다. 국가는 농업 및 어업을 보호·육성하기 위하여 농·어촌종합개발과 그 지원등 필요한 계획을 수립·시행하여야 한다.</p>
+        </div>-->
+        <div class="container-intro">
+            <div style="display: inline-block; border-radius: 50%; width:220px; height:220px; border: 11px solid RGBA(255,111,111,0.3); line-height:180px; margin-right: 100px; padding-left: 10px;">
+                <!-- <img src="/source/icon/icon_user.png"> -->
+                <img src="{{url_for('static',filename='source/icon/icon_user.png') }}">
+            </div>
+            <div style="max-width: 700px;display: inline-block;">
+                <h3 style="margin: 40px;">사용자의 성향 정보와 실시간 데이터를 활용으로 여러분이 원하는 맞춤 일정을 추천하고, 검색합니다.</h3>
+                <button class="button-main_icon" onclick="location.href='/goTravler'">| 시작하기 </button>
+            </div>
+        </div>
+        <div class="container-intro">
+            <div style="max-width: 700px;display: inline-block;">
+                <h3 style="margin: 40px;">여러분의 일상을 기록하고 공유할 수도 있습니다. 그 때의 느낌, 그 곳의 분위기 등 당신이 겪은 일들을 말해주세요.</h3>
+                <button class="button-main_icon" onclick="location.href='/goDiary'">| 시작하기 </button>
+            </div>
+            <div style="display: inline-block; border-radius: 50%; width:220px; height:220px; border: 11px solid RGBA(111,111,255,0.3); line-height:180px; margin:0 100px; padding-left: 10px;">
+                <!-- <img src="/source/icon/icon_planner.png"> -->
+                <img src="{{url_for('static',filename='source/icon/icon_planner.png') }}">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--    <script src="./bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--    <script src="./common/common.js"></script>-->
+    <script src="{{url_for('static',filename='common/common.js') }}"></script>
+    <script src="{{url_for('static',filename='js/index.js') }}"></script>
+</body>
+
+</html>

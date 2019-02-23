@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>오늘의 C2 - 플래너</title>
+        <meta name="description" content="플래너의 계획 목록을 확인하고 관리합니다.">
+        <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+        <!-- <link rel="stylesheet" href="./common/common.css"> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='common/common.css') }}">
+        <!-- <link rel="stylesheet" href="./css/planner-plan_list.css"> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/diary.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <div id="header"></div>
+        
+        <div id="container-body">
+            <div id="container-plan_list">
+                <h5 id="msg-no_plans">등록된 계획이 없습니다. 아래 버튼을 눌러 나만의 활동 계획을 세워보세요 !</h5>
+                <!--<button id="계획1" value="계획1" class="button-plan">-->
+                    <!--<div id="k1" class="container-plan_info">-->
+                        <!--<h4>#1. 잔잔하고 조용하게~ 분위기 있는 홍대 근교 추천 데이트 코스 !</h4>-->
+                        <!--<p>계획1의 간단한 설명 계획1의 간단한 설명 계획1의 간단한 설명</p>-->
+                    <!--</div>-->
+                    <!--<div class="container-plan_detail">-->
+                        <!--<ul class="div-thumbnail">-->
+                            <!--<li>-->
+                                <!--<div id="loc1" class="thumbnail">-->
+                                    <!--<img src="../static/source/img/어느 카페.jpg"/>-->
+                                <!--</div>-->
+                                <!--<h6 id="장소1" class="text-thumbnail"> 장소1</h6>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div id="loc1" class="thumbnail">-->
+                                    <!--<img src="../static/source/img/어느 카페.jpg"/>-->
+                                <!--</div>-->
+                                <!--<h6 id="장소2" class="text-thumbnail"> 장소2</h6>-->
+                            <!--</li><li>-->
+                                <!--<div id="loc1" class="thumbnail">-->
+                                    <!--<img src="../static/source/img/어느 카페.jpg"/>-->
+                                <!--</div>-->
+                                <!--<h6 id="장소3" class="text-thumbnail"> 장소3</h6>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<span>장소 분류 : </span>-->
+                        <!--<img class="category_icon" src="../static/source/icon/cafeicon.png">-->
+                        <!--<img class="category_icon" src="../static/source/icon/cafeicon.png">-->
+                        <!--<img class="category_icon" src="../static/source/icon/cafeicon.png">-->
+                        <!--<span class="text_start">시작 장소 : </span>-->
+                        <!--<span class="button-tag activated"><i class="fas fa-hashtag"></i>&nbsp;홍대</span>-->
+                    <!--</div>-->
+                <!--</button>-->
+
+            </div>
+            <button id = "asd">더보기</button>
+            <button id="button-create_plan" class="button-create_plan button-default" onclick="location.href='/createDiary'">계획 생성하기</button>
+            <button id="button-delete_plan" class="button-default disabled">계획 삭제하기</button>
+            <button id="button-create_plan_icon" class="button-create_plan" onclick="location.href='/createDiary'">+</button>
+        </div>
+        
+        <div id="footer"></div>
+
+        <script src="{{url_for('static',filename='js/diary.js') }}"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- <script src="./bootstrap/js/bootstrap.min.js"></script> -->
+        <script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+        <!-- <script src="./common/common.js"></script> -->
+        <script src="{{url_for('static',filename='common/common.js') }}"></script>
+        <!-- <script src="../static/js/planner-plan_list.js"></script> -->
+    </body>
+</html>
+

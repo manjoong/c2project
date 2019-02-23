@@ -1,0 +1,95 @@
+<div id="container-modal_chatbot_chatting" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_chatbot_chatting" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title">씨투에게 물어보기</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container-chatting">
+                    <div class="chatbox-c2">
+                        <img src="static/source/icon/C2bot.png" style="border-radius: 50%; border:3px solid RGBA(222,222,255,0.8); margin:10px; width:40px;">
+                        <div class="chat-c2">
+                            안녕하세요 ! 당신의 여가를 도와드릴 씨투에요. 무엇을 도와드릴까요?
+                        </div>
+                    </div>
+                </div>
+                <input placeholder="씨투에게 물어볼 내용을 입력해주세요." class="input-chat" type="text"><button class="button-default button-chat" type="submit">입력</button>
+            </div>
+            <div class="modal-footer">
+                <button id="button-chat_reset" type="button" class="btn btn-warning">초기화</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var item = {
+        "response": "안녕하세요 ! 당신의 여가를 도와드릴 씨투에요. 무엇을 도와드릴까요?"
+    };
+
+    /*** 트리거 - 챗봇에게 메시지 전송 ***/
+    $(".button-chat").on('click', function() {
+        send_msg();
+    });
+    $(".input-chat").keypress(function(e) {
+        if (e.which == 13) {
+            send_msg();
+        }
+    });
+
+    $("#button-chat_reset").on('click', function() {
+        $(".container-chatting").empty();
+        var cancle_msg = '취소';
+        //[함수명](cancle_msg); 통신 함수 호출
+        $(".input-chat").val('');
+        var str_c2img = '<img src="/source/icon/C2bot.png" style="border-radius: 50%; border:3px solid RGBA(222,222,255,0.8); margin:10px; width:40px;">';
+        var contents_c2_intro = '<div class="chatbox-c2"> ' + str_c2img + '<div class="chat-c2">' + '안녕하세요 ! 당신의 여가를 도와드릴 씨투에요. 무엇을 도와드릴까요?' + '</div></div>';
+        $(".container-chatting").append(contents_c2_intro);
+    });
+    /*** 챗봇에게 메시지 전송 ***/
+    function send_msg() {
+        var user_msg = $(".input-chat").val();
+        if (user_msg == "") {
+            //console.log("msg is null");
+            return;
+        }
+        console.log(user_msg);
+        var contents_me = '<div class="chatbox-me"><div class="chat-me">' + user_msg + '</div></div>';
+        $(".input-chat").val('');
+        $(".container-chatting").append(contents_me);
+        
+        function send_msg_to_server(data_user_msg) {
+            /*** [테스트용 더미 코드] 시작 ***/
+            /*var str_c2img = '<img src="static/source/icon/C2bot.png" style="border-radius: 50%; border:3px solid RGBA(222,222,255,0.8); margin:10px; width:40px;">';
+            var contents_c2 = '<div class="chatbox-c2"> ' + str_c2img + '<div class="chat-c2">' + '서버로부터 전송받은 메시지를 출력합니다.' /*data.response*/ + '</div></div>';
+            // $(".container-chatting").append(contents_c2); */
+            /*** [테스트용 더미 코드] 끝 ***/
+            var data ={text : data_user_msg}
+            $.ajax({
+                // url: "/requestChat",
+                url: "/requestChat",
+                // data: data_user_msg,
+                data: JSON.stringify(data),
+                timeout: 10000,
+                contentType: "application/json",
+                type: 'POST',
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    console.log("succese");
+                    // 서버로부터 data 라는 이름의 json data를 수신해옴
+                    // 이 데이터로 /*data.[응답 내용 text]*/ 부분을 채워주고 아래 주석을 해제하고 위의 [테스트용 더미 코드]부분 주석 해주면됨
+                    var str_c2img = '<img src="static/source/icon/C2bot.png" style="border-radius: 50%; border:3px solid RGBA(222,222,255,0.8); margin:10px; width:40px;">';
+                    var contents_c2 = '<div class="chatbox-c2"> ' + str_c2img + '<div class="chat-c2">' + data + '</div></div>';
+                    $(".container-chatting").append(contents_c2);
+                }
+            });
+        }
+        send_msg_to_server(user_msg);
+    }
+
+</script>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>오늘의 C2 - 태그 검색</title>
+    <meta name="description" content="사용자가 태그 기반으로 계획을 검색하는 페이지입니다.">
+    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+    <!-- <link rel="stylesheet" href="./common/common.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='common/common.css') }}">
+    <!-- <link rel="stylesheet" href="./css/user-main.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/travler.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Daum 지도 API for JavaScript3.0-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=411fd70316e928dd88d82285f4f8e93a&libraries=clusterer,services,drawing"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container-wrapper" id="container-body">
+        <div id="container-c2_plan_list">
+            <h2>오늘의 추천 계획</h2>
+            <p>인생은 길지만 누려야 할 것은 많다. 시간은 쏜살같지만 우리의 휴일은 소중하다 !</p>
+            <button id="계획1" value="계획1" class="button-plan" data-toggle="modal" data-target="#container-modal_plan_detail">
+                <div class="container-plan_info">
+                    <h4>#1. 잔잔하고 조용하게~ 분위기 있는 홍대 근교 추천 데이트 코스 !</h4>
+                    <p>계획1의 간단한 설명 계획1의 간단한 설명 계획1의 간단한 설명</p>
+                </div>
+                <div class="container-plan_detail">
+                    <ul class="div-thumbnail">
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소1" class="text-thumbnail"> 장소1</h6>
+                        </li>
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소2" class="text-thumbnail"> 장소2</h6>
+                        </li>
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소3" class="text-thumbnail"> 장소3</h6>
+                        </li>
+                    </ul>
+                    <span>장소 분류 : </span>
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <span class="text_start">시작 장소 : </span>
+                    <span class="button-tag activated"><i class="fas fa-hashtag"></i>&nbsp;홍대</span>
+                </div>
+            </button>
+            <button id="계획1" value="계획1" class="button-plan" data-toggle="modal" data-target="#container-modal_plan_detail">
+                <div class="container-plan_info">
+                    <h4>#1. 잔잔하고 조용하게~ 분위기 있는 홍대 근교 추천 데이트 코스 !</h4>
+                    <p>계획1의 간단한 설명 계획1의 간단한 설명 계획1의 간단한 설명</p>
+                </div>
+                <div class="container-plan_detail">
+                    <ul class="div-thumbnail">
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소1" class="text-thumbnail"> 장소1</h6>
+                        </li>
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소2" class="text-thumbnail"> 장소2</h6>
+                        </li>
+                        <li>
+                            <div id="loc1" class="thumbnail">
+                                <!-- <img src="./source/img/어느 카페.jpg" /> -->
+                                <img src="{{url_for('static',filename='source/img/cafe.jpg') }}" />
+                            </div>
+                            <h6 id="장소3" class="text-thumbnail"> 장소3</h6>
+                        </li>
+                    </ul>
+                    <span>장소 분류 : </span>
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <!-- <img class="category_icon" src="./source/icon/cafeicon.png"> -->
+                    <img class="category_icon" src="{{url_for('static',filename='source/icon/cafeicon.png') }}">
+                    <span class="text_start">시작 장소 : </span>
+                    <span class="button-tag activated"><i class="fas fa-hashtag"></i>&nbsp;홍대</span>
+                </div>
+            </button>
+        </div>
+        <div class="double_line" style="margin-top:40px; "></div>
+        <form action='/searchtag' method="POST" id="gd">
+            <div id="container-search_bar">
+                <input id=location_tags type=hidden name=tags value="">
+                <input id=mood_tags type=hidden name=tags value="">
+                <input id=purpose_tags type=hidden name=tags value="">
+                <input id=indoor_tags type=hidden name=tags value="">
+                <div id="container-tagVals" value="0">|</div>
+                <button class="button-search" id="pp" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+
+            <div id="container-tagbox_pannel">
+                <div id="location" value="0" class="container-tagbox">
+                    <h3>위치</h3>
+                    <button class="button-tag" type="button" value="연남"><i class="fas fa-hashtag"></i>&nbsp;연남</button>
+                    <button class="button-tag" type="button" value="홍대"><i class="fas fa-hashtag"></i>&nbsp;홍대</button>
+                    <button class="button-tag" type="button" value="가로수길"><i class="fas fa-hashtag"></i>&nbsp;가로수길</button>
+                    <button class="button-tag" type="button" value="이태원"><i class="fas fa-hashtag"></i>&nbsp;이태원</button>
+                    <button class="button-tag" type="button" value="왕십리"><i class="fas fa-hashtag"></i>&nbsp;왕십리</button>
+                    <button class="button-tag" type="button" value="건대"><i class="fas fa-hashtag"></i>&nbsp;건대</button>
+                    <button class="button-tag" type="button" value="혜화"><i class="fas fa-hashtag"></i>&nbsp;혜화</button>
+                    <button class="button-tag" type="button" value="신촌"><i class="fas fa-hashtag"></i>&nbsp;신촌</button>
+                    <button class="button-tag" type="button" value="강남"><i class="fas fa-hashtag"></i>&nbsp;강남</button>
+                    <button class="button-tag" type="button" value="종로"><i class="fas fa-hashtag"></i>&nbsp;종로</button>
+                    <button class="button-tag" type="button" value="광화문"><i class="fas fa-hashtag"></i>&nbsp;광화문</button>
+                    <button class="button-tag" type="button" value="압구정"><i class="fas fa-hashtag"></i>&nbsp;압구정</button>
+                    <button class="button-tag" type="button" value="서울기타지역"><i class="fas fa-hashtag"></i>&nbsp;서울기타지역</button>
+                </div>
+                <div id="mood" value="0" class="container-tagbox">
+                    <h3>분위기</h3>
+                    <button class="button-tag" type="button" value="편안한"><i class="fas fa-hashtag"></i>&nbsp;편안한</button>
+                    <button class="button-tag" type="button" value="고급스러운"><i class="fas fa-hashtag"></i>&nbsp;고급스러운</button>
+                    <button class="button-tag" type="button" value="재미있는"><i class="fas fa-hashtag"></i>&nbsp;재미있는</button>
+                    <button class="button-tag" type="button" value="아늑한"><i class="fas fa-hashtag"></i>&nbsp;아늑한</button>
+                    <button class="button-tag" type="button" value="친절한"><i class="fas fa-hashtag"></i>&nbsp;친절한</button>
+                    <button class="button-tag" type="button" value="화려한"><i class="fas fa-hashtag"></i>&nbsp;화려한</button>
+                    <button class="button-tag" type="button" value="깨끗한"><i class="fas fa-hashtag"></i>&nbsp;깨끗한</button>
+                    <button class="button-tag" type="button" value="빈티지한"><i class="fas fa-hashtag"></i>&nbsp;빈티지한</button>
+                    <button class="button-tag" type="button" value="분위기좋은"><i class="fas fa-hashtag"></i>&nbsp;분위기좋은</button>
+                </div>
+                <div id="purpose" value="0" class="container-tagbox">
+                    <h3>목적</h3>
+                    <button class="button-tag" type="button" value="가족"><i class="fas fa-hashtag"></i>&nbsp;가족</button>
+                    <button class="button-tag" type="button" value="동료"><i class="fas fa-hashtag"></i>&nbsp;동료</button>
+                    <button class="button-tag" type="button" value="연인"><i class="fas fa-hashtag"></i>&nbsp;연인</button>
+                    <button class="button-tag" type="button" value="친구"><i class="fas fa-hashtag"></i>&nbsp;친구</button>
+                    <button class="button-tag" type="button" value="기타"><i class="fas fa-hashtag"></i>&nbsp;기타</button>
+                    <button class="button-tag" type="button" value="혼자"><i class="fas fa-hashtag"></i>&nbsp;혼자</button>
+                </div>
+                <div id="indoor" value="0" class="container-tagbox">
+                    <h3>실내/야외</h3>
+                    <button class="button-tag" type="button" value="실내"><i class="fas fa-hashtag"></i>&nbsp;실내</button>
+                    <button class="button-tag" type="button" value="야외"><i class="fas fa-hashtag"></i>&nbsp;야외</button>
+                </div>
+            </div>
+        </form>
+        <button id="button-chatbot" data-toggle="modal" data-target="#container-modal_chatbot_chatting">
+            <!-- <img src="./source/icon/C2bot.png"> -->
+            <img src="{{url_for('static',filename='source/icon/C2bot.png') }}">
+        </button>
+        <div id="container-modal_plan"></div>
+        <div id="container-modal_chatbot"></div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script src="./bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- <script src="./common/common.js"></script> -->
+    <script src="{{url_for('static',filename='common/common.js') }}"></script>
+    <!-- <script src="./js/user-main.js"></script> -->
+    <script src="{{url_for('static',filename='js/travler.js') }}"></script>
+    <!-- <script src="./js/user-search_result.js"></script> -->
+</body>
+</html>

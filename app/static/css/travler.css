@@ -1,0 +1,72 @@
+#container-search_bar{
+    margin: auto auto;
+    padding: 20px 10px;
+    width:100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+#container-tagbox_pannel{
+    transition: all 0.2s;
+    display: block;
+    width:80%;
+    margin: auto auto;;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.container-tagbox{
+    vertical-align: middle;
+    margin:2% 2%;
+    padding:1% 1%;
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid RGBA(222,222,222,1);
+    width:37%;
+    height: auto;
+    min-width: 300px;
+}
+
+#container-tagVals{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid RGBA(111,111,111,0.5);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 15px;
+    margin-right: 0;
+    min-width: 300px;
+    max-width: 600px;
+    color:transparent;
+}
+
+.button-search{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid RGBA(111,111,111,0.5);
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: 0;
+}
+.button-search:hover{
+    background-color: RGBA(255,111,111,0.7);
+    color:white;
+}
+
+.container-wrapper{
+    display: block;
+    width: 88%;
+    border: 1px solid lightgray;
+    border-radius: 11px;
+    margin-top:50px !important;
+    padding:20px;
+}
+#container-c2_plan_list{
+    width:90%;
+    margin:auto;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>오늘의 C2 - 계획 생성하기</title>
+    <meta name="description" content="활동 계획을 생성하는 페이지입니다.">
+    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css') }}">
+    <!-- <link rel="stylesheet" href="./common/common.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='common/common.css') }}">
+    <!-- <link rel="stylesheet" href="./common/map.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='common/map.css') }}">
+    <!-- <link rel="stylesheet" href="./css/planner-create_plan.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/create_diary.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Daum 지도 API for JavaScript3.0-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=411fd70316e928dd88d82285f4f8e93a&libraries=clusterer,services,drawing"></script>
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div id="container-body">
+        <div id="container-planning">
+            <!-- <img src="./source/icon/logo_black.png"> -->
+            <img src="{{url_for('static',filename='source/icon/logo_black.png') }}">
+            <h2>계획 생성하기</h2>
+            <p>인생은 길지만 누려야 할 것은 많다. 시간은 쏜살같지만 우리의 휴일은 소중하다 !</p>
+            <div class="double_line"></div>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="plan-title">계획 제목</span>
+                <input type="text" class="form-control" placeholder="계획의 제목을 입력해주세요." aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="plan-description">계획 설명</span>
+                <input type="text" class="form-control" placeholder="계획에 대한 설명을 200자 이내로 간단하게 입력해주세요." aria-describedby="basic-addon1">
+            </div>
+            <div class="double_line"></div>
+
+            <div id="container-loc" class="container-loc">
+                <h4>장소 추가하기</h4>
+                <div class="map_wrap">
+                    <div id="map-loc" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+                    <div id="menu_wrap" class="bg_white">
+                        <div class="option">
+                            <div>
+                                <form onsubmit="searchPlaces(); return false;">
+                                    <input type="text" value="SK C&C 본사" id="keyword" size="15">
+                                    <button id="button-search_loc" type="submit">검색</button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul id="placesList"></ul>
+                        <div id="pagination"></div>
+                    </div>
+                </div>
+                <p>(목록에서 더블 클릭하여 해당 장소로 이동하고, 마커를 우클릭하여 장소를 추가할 수 있습니다.)</p>
+                <div class="container-input_loc_info">
+                    <h3>추가한 장소</h3>
+                    <!--<button id="홍대 맛집1" class="button-tag button-loc">
+                        <h4># 홍대 맛집1</h4>
+                        <h5>도로명 주소</h5>
+                        <h5>지번 주소</h5>
+                        <h6>123-1234-1234</h6>
+                    </button>-->
+                    <!--<input id="input-map-loc" class="input-clear" type="text" placeholder="장소를 검색할 키워드를 입력해주세요." /><button value="map-loc" class="button-loc_search button-default">검색</button>-->
+                </div>
+                <div class="double_line"></div>
+                <div id="container-tagbox_pannel">
+                    <div id="location" value="0" class="container-tagbox">
+                        <h3>위치</h3>
+                        <button class="button-tag" value="홍대"><i class="fas fa-hashtag"></i>&nbsp;홍대</button>
+                        <button class="button-tag" value="강남"><i class="fas fa-hashtag"></i>&nbsp;강남</button>
+                        <button class="button-tag" value="신사동"><i class="fas fa-hashtag"></i>&nbsp;신사동</button>
+                        <button class="button-tag" value="을지로"><i class="fas fa-hashtag"></i>&nbsp;을지로</button>
+                        <button class="button-tag" value="종로"><i class="fas fa-hashtag"></i>&nbsp;종로</button>
+                        <button class="button-tag" value="여의도"><i class="fas fa-hashtag"></i>&nbsp;여의도</button>
+                        <button class="button-tag" value="서울_어딘가"><i class="fas fa-hashtag"></i>&nbsp;서울 어딘가</button>
+                    </div>
+                    <div class="container-tagbox">
+                        <h3>분위기</h3>
+                        <button class="button-tag" value="분위기1"><i class="fas fa-hashtag"></i>&nbsp;분위기1</button>
+                        <button class="button-tag" value="분위기2"><i class="fas fa-hashtag"></i>&nbsp;분위기2</button>
+                        <button class="button-tag" value="분위기3"><i class="fas fa-hashtag"></i>&nbsp;분위기3</button>
+                    </div>
+                    <div class="container-tagbox">
+                        <h3>목적</h3>
+                        <button class="button-tag" value="목적1"><i class="fas fa-hashtag"></i>&nbsp;목적1</button>
+                        <button class="button-tag" value="목적2"><i class="fas fa-hashtag"></i>&nbsp;목적2</button>
+                        <button class="button-tag" value="목적3"><i class="fas fa-hashtag"></i>&nbsp;목적3</button>
+                    </div>
+                    <div class="container-tagbox">
+                        <h3>실내/야외</h3>
+                        <button class="button-tag" value="indoor"><i class="fas fa-hashtag"></i>&nbsp;실내</button>
+                        <button class="button-tag" value="outdoor"><i class="fas fa-hashtag"></i>&nbsp;야외</button>
+                        <button class="button-tag" value="opened-indoor"><i class="fas fa-hashtag"></i>&nbsp;오픈된 실내</button>
+                    </div>
+                </div>
+                <div id="container-search_bar">
+                    <div id="container-tagVals" value="0">|</div>
+                    <h6>추가한 태그</h6>
+                </div>
+            </div>
+        </div>
+        <button id="button-create_plan" class="button-default">생성하기</button>
+    </div>
+
+    <div id="footer"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script src="./bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- <script src="./common/common.js"></script> -->
+    <script src="{{url_for('static',filename='common/common.js') }}"></script>
+    <!-- <script src="./js/map-planning.js"></script> -->
+    <script src="{{url_for('static',filename='js/create_diary.js') }}"></script>
+
+</body>
+
+</html>

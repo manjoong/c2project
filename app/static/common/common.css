@@ -1,0 +1,434 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumSquare';
+    /*src: url('../bootstrap/fonts/NanumSquareL.ttf');*/
+    src: "static/bootstrap/fonts/NanumSquareL.ttf')";
+    font-weight: 200;
+}
+
+* {
+    font-family: 'NanumSquare', sans-serif;
+}
+
+body {
+    text-align: center;
+    display: block;
+    margin: auto auto;
+}
+
+.dropdown-menu {
+    transition: all 0.2s;
+    font-size: 11pt;
+    text-align: justify;
+    padding: 5px 0px;
+    border: 1px solid RGBA(255, 111, 111, 0.5);
+    box-shadow: 3px 3px 3px 0px RGBA(111, 111, 111, 0.3);
+    margin: 0 0;
+    position: absolute;
+    z-index: 99;
+    font-size: 12pt;
+}
+
+.dropdown-menu > li > a:hover {
+    transition: all 0.2s;
+    background-color: RGBA(255, 111, 111, 0.3);
+}
+
+button {
+    transition: all ease 0.2s 0s;
+}
+
+.button-default {
+    background-color: white;
+    border: 1px solid RGBA(222, 222, 222, 1);
+}
+
+.button-clear {
+    border: none;
+    background-color: transparent;
+    margin: 0 0;
+    padding: 5px 10px;
+    font-size: 13pt;
+    margin: auto auto;
+}
+
+.button-clear:hover {
+    background-color: RGBA(255, 111, 111, 0.3);
+}
+
+.button-default:hover {
+    background-color: RGBA(255, 111, 111, 0.3);
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: auto;
+    padding: 0px 2%;
+    border-bottom: 1px solid RGBA(255, 111, 111, 1);
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#header::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#button-homelogo {
+    width: 40px;
+    height: 100%;
+    float: left;
+    padding: 3px 8px;
+    overflow: hidden;
+}
+
+#button-homelogo:hover {
+    transition: all 0.3s;
+    background-color: transparent;
+    transform: scale(1.05);
+    width: 100px;
+}
+
+#button-homelogo:hover img {
+    transition: all 0.3s;
+    margin-left: 0px;
+}
+
+#button-homelogo img {
+    margin-left: -66px;
+}
+
+#img-logo-topnav {
+    height: 28px;
+    width: auto;
+}
+
+#container-dropdown_profile {
+    display: inline-block;
+    float: right;
+}
+
+.button-menu {
+    vertical-align: middle;
+    text-align: center;
+    margin: auto auto;
+    padding: auto 20px !important;
+}
+
+#button-login {
+    float: right;
+    display: inline-block;
+    color: lightcoral;
+    margin: 0 0;
+    padding: 5px 15px;
+    font-size: 13pt;
+    vertical-align: middle;
+}
+
+#button-login:hover {
+    transition: all ease 0.2s 0s;
+    background-color: RGBA(255, 77, 77, 0.5);
+    color: white;
+}
+
+#button-login > span {
+    font-size: 9pt;
+    margin-left: 9px;
+}
+
+#container-body {
+    clear: both;
+    display: block;
+    margin: auto auto;
+    margin-top: 35px;
+    text-align: center;
+    height: auto;
+    padding-bottom: 57px;
+}
+
+#footer {
+    display: block;
+    background-color: white;
+    position: fixed;
+    z-index: 88;
+    bottom: 0px;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+    border-top: 1px solid RGBA(222, 222, 222, 1);
+}
+
+#footer > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#footer > div > p {
+    display: block;
+    font-size: 9pt;
+    margin: 5px auto;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+#footer > div :first-child {
+    padding-top: 3px;
+}
+
+#img-sklogo {
+    display: inline-block;
+    height: 40px;
+    ;
+    margin: 5px 20px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.button-tag {
+    border: 1px solid RGBA(255, 111, 111, 0.5);
+    background-color: transparent;
+    padding: 7px 11px;
+    border-radius: 11px;
+    font-size: 12pt;
+    font-family: sans-serif;
+    margin: 10px 5px;
+}
+
+.button-tag:hover {
+    transform: scale(1.15);
+}
+
+.activated {
+    background-color: RGBA(255, 111, 111, 0.7) !important;
+    color: white !important;
+}
+
+a:visited,
+a:focus,
+a:link,
+a:active {
+    color: initial;
+    text-decoration: none;
+}
+
+.a-place_link {
+    font-size: 10pt;
+    color: dodgerblue !important;
+}
+
+.a-place_link:hover {
+    text-decoration: underline;
+}
+
+.collapse {
+    transition: none;
+}
+
+#container-plan_list {
+    display: block;
+    vertical-align: middle;
+    margin: 20px auto;
+    padding: 20px 10px;
+    min-width: 350;
+    max-width: 90%;
+    min-height: 50px;
+    border: 1px solid RGBA(111, 111, 111, 0.3);
+    border-radius: 9px;
+    text-align: center;
+}
+
+.button-plan {
+    display: inline-block;
+    background-color: white;
+    min-width: 300px;
+    min-height: 20px;
+    padding: 10px 20px;
+    border: 1px solid RGBA(111, 111, 111, 0.4);
+    border-radius: 9px;
+    box-shadow: 3px 3px 3px RGBA(222, 222, 222, 0.4);
+    margin: 20px 2%;
+}
+
+.button-plan:hover {
+    background-color: RGBA(222, 222, 222, 0.2);
+    transform: scale(1.07);
+}
+
+.button-plan > div {
+    display: block;
+    margin: auto auto;
+}
+
+.container-plan_info {
+    text-align: justify;
+}
+
+.container-plan_info > h4 {
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+.container-plan_info > p {
+    padding-left: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid lightgray;
+}
+
+.div-thumbnail {
+    display: block;
+    padding: 0 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.div-thumbnail li {
+    list-style: none;
+    display: inline-block;
+}
+
+.div-thumbnail div {
+    overflow: hidden;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 5px 15px;
+    padding: 3px 3px;
+}
+
+.div-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category_icon {
+    margin: auto 5px;
+}
+
+.text_start {
+    margin-left: 30px;
+}
+
+.double_line {
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    width: 120px;
+    margin: auto auto;
+    display: block;
+    height: 7px;
+}
+
+#button-chatbot {
+    position: fixed;
+    display: block;
+    bottom: 100px;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    border-radius: 50%;
+    border: 15px solid RGBA(177, 233, 255, 1);
+    box-shadow: 3px 3px 3px 0px RGBA(111, 111, 111, 0.3);
+}
+
+#button-chatbot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(110%) contrast(110%);
+}
+
+#button-chatbot:hover {
+    border-width: 5px;
+    transition: all 0.2s;
+    transform: scale(1.3);
+}
+
+.button-go_back {
+    font-size: 13pt;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid darkgray;
+    padding: 5px 15px;
+}
+
+.button-go_back:hover {
+    background-color: darkseagreen;
+    color: white;
+}
+
+.container-chatting {
+    border: 1px solid lightgray;
+    margin: auto auto;
+    min-height: 200px;
+    width: 95%;
+    height: 90%;
+    background-color: RGBA(222, 222, 222, 0.2);
+    border-radius: 10px;
+}
+
+.chat-c2 {
+    display: inline-block;
+    max-width: 70%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid darkgray;
+    box-shadow: 2px 2px 2px RGBA(111, 111, 111, 0.2);
+    padding: 10px 10px;
+    background-color: RGBA(222, 222, 255, 1);
+    text-align: left;
+    word-break: break-all;
+}
+
+.chat-me {
+    display: inline-block;
+    max-width: 70%;
+    height: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid darkgray;
+    box-shadow: 2px 2px 2px RGBA(111, 111, 111, 0.2);
+    background-color: RGBA(255, 222, 222, 1);
+    padding: 10px 10px;
+    text-align: right;
+    word-break: break-all;
+}
+
+.chatbox-c2 {
+    display: block;
+    text-align: left;
+}
+
+.chatbox-me {
+    display: block;
+    text-align: right;
+}
+
+.input-chat {
+    margin: 7px;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+    text-align: center;
+    width: 80%;
+}
+
+.button-chat {
+    width: 10%;
+    border-radius: 7px;
+    padding: 3px 11px;
+    overflow: hidden;
+}

@@ -1,0 +1,131 @@
+#container-body{
+    padding-top: 1px;
+    text-align: center;
+    padding-bottom: 80px;
+}
+#container-plan_list{
+    display: block;
+    vertical-align: middle;
+    margin: 20px auto;
+    padding: 20px 10px;
+    min-width: 350;
+    max-width:90%;
+    min-height: 50px;
+    border:1px solid RGBA(111,111,111,0.3);
+    text-align: center;
+}
+
+.button-plan{
+    display: inline-block;
+    background-color: white;
+    min-width:300px;
+    min-height: 20px;
+    padding: 10px 20px;
+    border: 1px solid RGBA(111,111,111,0.4);
+    border-radius: 9px;
+    box-shadow: 3px 3px 3px RGBA(222,222,222,0.4);
+    margin: 20px 2%;
+}
+.button-plan:hover{
+    background-color: RGBA(222,222,222,0.2);
+    transform: scale(1.07);
+}
+.button-plan > div{
+    display: block;
+    margin: auto auto;
+}
+
+.container-plan_info{
+    text-align: justify;
+}
+.container-plan_info > h4{
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+.container-plan_info > p{
+    padding-left: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid lightgray;
+}
+
+.div-thumbnail{
+    display: block;
+    padding: 0 0;
+    border-bottom: 1px solid lightgray;
+}
+.div-thumbnail li{
+    list-style: none;
+    display: inline-block;
+}
+.div-thumbnail div{
+    overflow: hidden;
+    display:inline-block;
+    width:150px;
+    height: 150px;
+    margin: 5px 15px;
+    padding: 3px 3px;
+}
+.div-thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.category_icon{
+    margin: auto 5px;
+}
+
+.text_start{
+    margin-left:30px;
+}
+
+#button-create_plan{
+    border:1px solid RGBA(111,111,111,0.4);
+    font-size: 13pt;
+    border-radius: 8px;
+    padding:5px 10px;
+    margin-right:15px;
+}
+#button-create_plan:hover{
+    background-color: RGBA(123,233,123,1.0);
+    color: white;
+}
+#button-delete_plan{
+    border:1px solid RGBA(111,111,111,0.4);
+    background-color:RGBA(255,55,55,1);
+    color:white;
+    font-size: 13pt;
+    border-radius: 8px;
+    padding:5px 10px;
+}
+#button-delete_plan:hover{
+    background-color: lightgray;
+    color:gray;
+    cursor:not-allowed;
+}
+
+#button-create_plan_icon{
+    position: fixed;
+    bottom: 100px;
+    right:5%;
+    background-color: RGBA(111,233,111,1.0);
+    border: 16px solid RGBA(255,255,255,0.3);
+    border-radius: 50%;
+    width:100px;
+    height: 100px;
+    font-size: 70pt;
+    line-height: 11px;
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+    box-shadow: 3px 3px 3px 0px RGBA(111,111,111,0.3);
+}
+#button-create_plan_icon:hover{
+    transform:scale(1.3);
+    transition: all 0.2s;
+    font-size: 80pt;
+    border-width: 8px;
+    background-color: RGBA(111,244,111, 1.0);
+}
+#msg-no_plans{
+    display: none;
+}
